@@ -1,0 +1,5 @@
+requests
+reportlab
+fastapi
+uvicorn
+pdf2image
