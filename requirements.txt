@@ -1,5 +1,13 @@
-requests
-reportlab
-fastapi
-uvicorn
-pdf2image
+# Hyperpure Scraper Requirements
+# Core packages for web scraping
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# Optional packages for enhanced functionality
+pandas==2.0.3
+selenium==4.15.0
+webdriver-manager==4.0.1
+
+# Installation:
+# pip install -r requirements.txt
