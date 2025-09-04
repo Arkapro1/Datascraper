@@ -36,12 +36,11 @@ ENV/
 *.swo
 *~
 
-# Logs
-*.log
-logs/
+# Logs (keep logs folder but ignore content)
+logs/*.log
 
-# CSV output files (you may want to track these, comment out if needed)
-*.csv
+# CSV output files (keep data folder but ignore large CSV files)
+data/*.csv
 
 # OS
 .DS_Store
