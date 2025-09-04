@@ -484,6 +484,20 @@ class HyperpureDetailedScraper:
         try:
             full_text = soup.get_text()
             
+            # Extract product name from H1 tag first
+            h1_tag = soup.find('h1')
+            if h1_tag:
+                product.product_name = self.clean_text(h1_tag.get_text())
+            
+            # If no H1, try title tag
+            if not product.product_name:
+                title_tag = soup.find('title')
+                if title_tag:
+                    title_text = title_tag.get_text()
+                    # Clean up title (remove "Wholesalers with best prices..." part)
+                    title_clean = re.sub(r'\s+Wholesalers.*$', '', title_text)
+                    product.product_name = self.clean_text(title_clean)
+            
             # Extract main product description
             desc_patterns = [
                 r'Product details\s*(.+?)(?=Product Highlights|Key Features|Similar items)',
